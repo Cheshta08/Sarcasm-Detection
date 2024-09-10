@@ -1,0 +1,1359 @@
+Current date and time: 2024-08-13 01:21:02.340818
+
+
+==================================================================
+Current feature: pragmatic
+==================================================================
+
+
+=========================    FEATURES    =========================
+
+                     tw_len_ch           1
+                    tw_len_tok           1
+                       avg_len           1
+                   capitalized           1
+                      laughter           1
+                 user_mentions           1
+                     negations           1
+                  affirmatives           1
+                 interjections           1
+                  intensifiers           1
+                   punctuation           1
+                        emojis           1
+                      hashtags           1
+
+==================================================================
+
+Size of the feature sets: train =   13 , test =  13
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.473
+Precision: 0.602
+Recall: 0.473
+F_score: 0.436
+
+              precision    recall  f1-score   support
+
+           0       0.72      0.25      0.37      2323
+           1       0.41      0.84      0.55      1419
+
+    accuracy                           0.47      3742
+   macro avg       0.56      0.55      0.46      3742
+weighted avg       0.60      0.47      0.44      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.484
+Precision: 0.596
+Recall: 0.484
+F_score: 0.459
+
+              precision    recall  f1-score   support
+
+           0       0.71      0.29      0.41      2323
+           1       0.41      0.81      0.54      1419
+
+    accuracy                           0.48      3742
+   macro avg       0.56      0.55      0.48      3742
+weighted avg       0.60      0.48      0.46      3742
+
+
+=========================    FEATURES    =========================
+
+                     tw_len_ch           1
+                    tw_len_tok           1
+                       avg_len           1
+                   capitalized           1
+                      laughter           1
+                 user_mentions           1
+                     negations           0
+                  affirmatives           0
+                 interjections           0
+                  intensifiers           0
+                   punctuation           1
+                        emojis           1
+                      hashtags           1
+
+==================================================================
+
+Size of the feature sets: train =   9 , test =  9
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.429
+Precision: 0.567
+Recall: 0.429
+F_score: 0.361
+
+              precision    recall  f1-score   support
+
+           0       0.68      0.15      0.25      2323
+           1       0.39      0.88      0.54      1419
+
+    accuracy                           0.43      3742
+   macro avg       0.53      0.52      0.40      3742
+weighted avg       0.57      0.43      0.36      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.431
+Precision: 0.552
+Recall: 0.431
+F_score: 0.374
+
+              precision    recall  f1-score   support
+
+           0       0.65      0.18      0.28      2323
+           1       0.39      0.85      0.53      1419
+
+    accuracy                           0.43      3742
+   macro avg       0.52      0.51      0.40      3742
+weighted avg       0.55      0.43      0.37      3742
+
+
+=========================    FEATURES    =========================
+
+                     tw_len_ch           1
+                    tw_len_tok           1
+                       avg_len           1
+                   capitalized           1
+                      laughter           1
+                 user_mentions           1
+                     negations           0
+                  affirmatives           0
+                 interjections           0
+                  intensifiers           0
+                   punctuation           0
+                        emojis           0
+                      hashtags           0
+
+==================================================================
+
+Size of the feature sets: train =   6 , test =  6
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.440
+Precision: 0.629
+Recall: 0.440
+F_score: 0.358
+
+              precision    recall  f1-score   support
+
+           0       0.77      0.14      0.24      2323
+           1       0.40      0.93      0.56      1419
+
+    accuracy                           0.44      3742
+   macro avg       0.58      0.54      0.40      3742
+weighted avg       0.63      0.44      0.36      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.448
+Precision: 0.603
+Recall: 0.448
+F_score: 0.385
+
+              precision    recall  f1-score   support
+
+           0       0.73      0.18      0.28      2323
+           1       0.40      0.89      0.55      1419
+
+    accuracy                           0.45      3742
+   macro avg       0.56      0.53      0.42      3742
+weighted avg       0.60      0.45      0.38      3742
+
+
+=========================    FEATURES    =========================
+
+                     tw_len_ch           1
+                    tw_len_tok           1
+                       avg_len           1
+                   capitalized           1
+                      laughter           0
+                 user_mentions           0
+                     negations           0
+                  affirmatives           0
+                 interjections           0
+                  intensifiers           0
+                   punctuation           0
+                        emojis           0
+                      hashtags           0
+
+==================================================================
+
+Size of the feature sets: train =   4 , test =  4
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.418
+Precision: 0.532
+Recall: 0.418
+F_score: 0.353
+
+              precision    recall  f1-score   support
+
+           0       0.63      0.15      0.25      2323
+           1       0.38      0.85      0.52      1419
+
+    accuracy                           0.42      3742
+   macro avg       0.50      0.50      0.39      3742
+weighted avg       0.53      0.42      0.35      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.429
+Precision: 0.518
+Recall: 0.429
+F_score: 0.396
+
+              precision    recall  f1-score   support
+
+           0       0.61      0.23      0.33      2323
+           1       0.37      0.76      0.50      1419
+
+    accuracy                           0.43      3742
+   macro avg       0.49      0.49      0.42      3742
+weighted avg       0.52      0.43      0.40      3742
+
+
+==================================================================
+Current feature: sentiment
+==================================================================
+
+
+=========================    FEATURES    =========================
+
+                positive emoji           1
+                negative emoji           1
+                 neutral emoji           1
+                emojis pos:neg           1
+            emojis neutral:neg           1
+          subjlexicon weaksubj           1
+        subjlexicon strongsubj           1
+          subjlexicon positive           1
+          subjlexicon negative           1
+           subjlexicon neutral           1
+                 words pos:neg           1
+             words neutral:neg           1
+      subjectivity strong:weak           1
+         total sentiment words           1
+               Vader score neg           1
+               Vader score pos           1
+               Vader score neu           1
+          Vader score compound           1
+
+==================================================================
+
+Size of the feature sets: train =   18 , test =  18
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.377
+Precision: 0.438
+Recall: 0.377
+F_score: 0.337
+
+              precision    recall  f1-score   support
+
+           0       0.50      0.18      0.26      2323
+           1       0.34      0.71      0.46      1419
+
+    accuracy                           0.38      3742
+   macro avg       0.42      0.44      0.36      3742
+weighted avg       0.44      0.38      0.34      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.384
+Precision: 0.429
+Recall: 0.384
+F_score: 0.386
+
+              precision    recall  f1-score   support
+
+           0       0.51      0.32      0.39      2323
+           1       0.30      0.48      0.37      1419
+
+    accuracy                           0.38      3742
+   macro avg       0.40      0.40      0.38      3742
+weighted avg       0.43      0.38      0.39      3742
+
+
+=========================    FEATURES    =========================
+
+                positive emoji           1
+                negative emoji           1
+                 neutral emoji           1
+                emojis pos:neg           0
+            emojis neutral:neg           0
+          subjlexicon weaksubj           1
+        subjlexicon strongsubj           1
+          subjlexicon positive           1
+          subjlexicon negative           1
+           subjlexicon neutral           1
+                 words pos:neg           0
+             words neutral:neg           0
+      subjectivity strong:weak           0
+         total sentiment words           0
+               Vader score neg           1
+               Vader score pos           1
+               Vader score neu           1
+          Vader score compound           1
+
+==================================================================
+
+Size of the feature sets: train =   12 , test =  12
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.366
+Precision: 0.417
+Recall: 0.366
+F_score: 0.348
+
+              precision    recall  f1-score   support
+
+           0       0.48      0.23      0.31      2323
+           1       0.32      0.60      0.42      1419
+
+    accuracy                           0.37      3742
+   macro avg       0.40      0.41      0.36      3742
+weighted avg       0.42      0.37      0.35      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.386
+Precision: 0.427
+Recall: 0.386
+F_score: 0.391
+
+              precision    recall  f1-score   support
+
+           0       0.51      0.35      0.41      2323
+           1       0.30      0.45      0.36      1419
+
+    accuracy                           0.39      3742
+   macro avg       0.40      0.40      0.38      3742
+weighted avg       0.43      0.39      0.39      3742
+
+
+=========================    FEATURES    =========================
+
+                positive emoji           1
+                negative emoji           1
+                 neutral emoji           1
+                emojis pos:neg           1
+            emojis neutral:neg           1
+          subjlexicon weaksubj           0
+        subjlexicon strongsubj           0
+          subjlexicon positive           0
+          subjlexicon negative           0
+           subjlexicon neutral           0
+                 words pos:neg           0
+             words neutral:neg           0
+      subjectivity strong:weak           0
+         total sentiment words           0
+               Vader score neg           1
+               Vader score pos           1
+               Vader score neu           1
+          Vader score compound           1
+
+==================================================================
+
+Size of the feature sets: train =   9 , test =  9
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.422
+Precision: 0.467
+Recall: 0.422
+F_score: 0.427
+
+              precision    recall  f1-score   support
+
+           0       0.55      0.37      0.44      2323
+           1       0.33      0.51      0.40      1419
+
+    accuracy                           0.42      3742
+   macro avg       0.44      0.44      0.42      3742
+weighted avg       0.47      0.42      0.43      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.401
+Precision: 0.437
+Recall: 0.401
+F_score: 0.408
+
+              precision    recall  f1-score   support
+
+           0       0.52      0.39      0.45      2323
+           1       0.30      0.42      0.35      1419
+
+    accuracy                           0.40      3742
+   macro avg       0.41      0.40      0.40      3742
+weighted avg       0.44      0.40      0.41      3742
+
+
+=========================    FEATURES    =========================
+
+                positive emoji           0
+                negative emoji           0
+                 neutral emoji           0
+                emojis pos:neg           0
+            emojis neutral:neg           0
+          subjlexicon weaksubj           1
+        subjlexicon strongsubj           1
+          subjlexicon positive           1
+          subjlexicon negative           1
+           subjlexicon neutral           1
+                 words pos:neg           1
+             words neutral:neg           1
+      subjectivity strong:weak           1
+         total sentiment words           1
+               Vader score neg           1
+               Vader score pos           1
+               Vader score neu           1
+          Vader score compound           1
+
+==================================================================
+
+Size of the feature sets: train =   13 , test =  13
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.375
+Precision: 0.434
+Recall: 0.375
+F_score: 0.335
+
+              precision    recall  f1-score   support
+
+           0       0.49      0.18      0.26      2323
+           1       0.34      0.70      0.46      1419
+
+    accuracy                           0.38      3742
+   macro avg       0.42      0.44      0.36      3742
+weighted avg       0.43      0.38      0.34      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.381
+Precision: 0.426
+Recall: 0.381
+F_score: 0.383
+
+              precision    recall  f1-score   support
+
+           0       0.50      0.32      0.39      2323
+           1       0.30      0.48      0.37      1419
+
+    accuracy                           0.38      3742
+   macro avg       0.40      0.40      0.38      3742
+weighted avg       0.43      0.38      0.38      3742
+
+
+=========================    FEATURES    =========================
+
+                positive emoji           1
+                negative emoji           1
+                 neutral emoji           1
+                emojis pos:neg           1
+            emojis neutral:neg           1
+          subjlexicon weaksubj           1
+        subjlexicon strongsubj           1
+          subjlexicon positive           1
+          subjlexicon negative           1
+           subjlexicon neutral           1
+                 words pos:neg           1
+             words neutral:neg           1
+      subjectivity strong:weak           1
+         total sentiment words           1
+               Vader score neg           0
+               Vader score pos           0
+               Vader score neu           0
+          Vader score compound           0
+
+==================================================================
+
+Size of the feature sets: train =   14 , test =  14
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.475
+Precision: 0.494
+Recall: 0.475
+F_score: 0.482
+
+              precision    recall  f1-score   support
+
+           0       0.59      0.51      0.55      2323
+           1       0.34      0.41      0.37      1419
+
+    accuracy                           0.47      3742
+   macro avg       0.46      0.46      0.46      3742
+weighted avg       0.49      0.47      0.48      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.441
+Precision: 0.528
+Recall: 0.441
+F_score: 0.417
+
+              precision    recall  f1-score   support
+
+           0       0.62      0.26      0.37      2323
+           1       0.38      0.74      0.50      1419
+
+    accuracy                           0.44      3742
+   macro avg       0.50      0.50      0.43      3742
+weighted avg       0.53      0.44      0.42      3742
+
+
+==================================================================
+Current feature: syntactic
+==================================================================
+
+
+=========================    FEATURES    =========================
+
+                             N           1
+                             O           1
+                             S           1
+                             ^           1
+                             Z           1
+                             L           1
+                             M           1
+                             V           1
+                             A           1
+                             R           1
+                             !           1
+                             D           1
+                             P           1
+                             &           1
+                             T           1
+                             X           1
+                             Y           1
+                             #           1
+                             @           1
+                             ~           1
+                             U           1
+                             E           1
+                             $           1
+                             ,           1
+                             G           1
+
+==================================================================
+
+Size of the feature sets: train =   25 , test =  25
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.472
+Precision: 0.598
+Recall: 0.472
+F_score: 0.436
+
+              precision    recall  f1-score   support
+
+           0       0.72      0.25      0.37      2323
+           1       0.41      0.84      0.55      1419
+
+    accuracy                           0.47      3742
+   macro avg       0.56      0.54      0.46      3742
+weighted avg       0.60      0.47      0.44      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.471
+Precision: 0.597
+Recall: 0.471
+F_score: 0.434
+
+              precision    recall  f1-score   support
+
+           0       0.72      0.25      0.37      2323
+           1       0.40      0.84      0.55      1419
+
+    accuracy                           0.47      3742
+   macro avg       0.56      0.54      0.46      3742
+weighted avg       0.60      0.47      0.43      3742
+
+
+=========================    FEATURES    =========================
+
+                             N           1
+                             O           1
+                             S           1
+                             ^           0
+                             Z           1
+                             L           1
+                             M           1
+                             V           1
+                             A           1
+                             R           1
+                             !           0
+                             D           1
+                             P           1
+                             &           0
+                             T           1
+                             X           1
+                             Y           0
+                             #           0
+                             @           0
+                             ~           0
+                             U           1
+                             E           1
+                             $           1
+                             ,           0
+                             G           0
+
+==================================================================
+
+Size of the feature sets: train =   16 , test =  16
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.470
+Precision: 0.586
+Recall: 0.470
+F_score: 0.437
+
+              precision    recall  f1-score   support
+
+           0       0.70      0.26      0.38      2323
+           1       0.40      0.82      0.54      1419
+
+    accuracy                           0.47      3742
+   macro avg       0.55      0.54      0.46      3742
+weighted avg       0.59      0.47      0.44      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.470
+Precision: 0.588
+Recall: 0.470
+F_score: 0.437
+
+              precision    recall  f1-score   support
+
+           0       0.70      0.25      0.37      2323
+           1       0.40      0.82      0.54      1419
+
+    accuracy                           0.47      3742
+   macro avg       0.55      0.54      0.46      3742
+weighted avg       0.59      0.47      0.44      3742
+
+
+==================================================================
+Current feature: topic
+==================================================================
+
+
+=========================    FEATURES    =========================
+
+                     topics_no           4
+                        passes          15
+                     use_nouns           1
+                     use_verbs           1
+                       use_all           0
+
+==================================================================
+
+
+Top 10 words for topic  0
+['be', 'do', "don't", 'know', 'want', 'have', 'people', 'say', 'look', 'get']
+
+Top 10 words for topic  1
+['be', 'love', 'have', 'would', 'thanks', 'thank', 'get', 'friend', 'go', 'could']
+
+Top 10 words for topic  2
+['day', 'be', 'have', 'get', 'work', 'need', 'love', 'school', 'class', 'go']
+
+Top 10 words for topic  3
+['be', 'sleep', 'night', 'get', 'have', 'time', 'go', 'year', "can't", 'watch']
+Size of the feature sets: train =   4 , test =  4
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.521
+Precision: 0.537
+Recall: 0.521
+F_score: 0.527
+
+              precision    recall  f1-score   support
+
+           0       0.63      0.56      0.59      2323
+           1       0.39      0.45      0.42      1419
+
+    accuracy                           0.52      3742
+   macro avg       0.51      0.51      0.51      3742
+weighted avg       0.54      0.52      0.53      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.518
+Precision: 0.531
+Recall: 0.518
+F_score: 0.523
+
+              precision    recall  f1-score   support
+
+           0       0.62      0.57      0.60      2323
+           1       0.38      0.43      0.41      1419
+
+    accuracy                           0.52      3742
+   macro avg       0.50      0.50      0.50      3742
+weighted avg       0.53      0.52      0.52      3742
+
+
+=========================    FEATURES    =========================
+
+                     topics_no           6
+                        passes          20
+                     use_nouns           1
+                     use_verbs           1
+                       use_all           0
+
+==================================================================
+
+
+Top 10 words for topic  0
+['be', 'love', 'friend', 'have', 'girl', 'thing', 'morning', 'hate', 'night', 'thanks']
+
+Top 10 words for topic  1
+['love', 'day', 'be', 'have', 'go', 'make', 'work', 'sleep', 'get', 'school']
+
+Top 10 words for topic  2
+['be', 'do', 'have', 'shit', 'get', 'nothing', 'time', 'can', 'look', 'keep']
+
+Top 10 words for topic  3
+['be', 'think', "can't", 'love', 'wait', 'will', 'life', 'can', 'say', 'please']
+
+Top 10 words for topic  4
+['get', 'phone', 'play', 'have', 'hear', 'be', 'hair', 'take', 'win', 'make']
+
+Top 10 words for topic  5
+["don't", 'be', 'people', 'do', 'have', 'need', 'know', 'get', 'like', 'year']
+Size of the feature sets: train =   6 , test =  6
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.441
+Precision: 0.487
+Recall: 0.441
+F_score: 0.446
+
+              precision    recall  f1-score   support
+
+           0       0.57      0.39      0.46      2323
+           1       0.34      0.53      0.42      1419
+
+    accuracy                           0.44      3742
+   macro avg       0.46      0.46      0.44      3742
+weighted avg       0.49      0.44      0.45      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.435
+Precision: 0.476
+Recall: 0.435
+F_score: 0.441
+
+              precision    recall  f1-score   support
+
+           0       0.56      0.40      0.47      2323
+           1       0.33      0.49      0.40      1419
+
+    accuracy                           0.44      3742
+   macro avg       0.45      0.45      0.43      3742
+weighted avg       0.48      0.44      0.44      3742
+
+
+=========================    FEATURES    =========================
+
+                     topics_no           6
+                        passes          20
+                     use_nouns           0
+                     use_verbs           0
+                       use_all           1
+
+==================================================================
+
+
+Top 10 words for topic  0
+['i', 'be', 'you', 'to', 'it', 'that', 'a', 'me', 'do', "don't"]
+
+Top 10 words for topic  1
+['a', 'be', 'the', 'to', 'great', 'not', 'it', 'have', 'on', 'in']
+
+Top 10 words for topic  2
+['you', 'love', 'so', 'i', 'thank', 'for', 'my', 'happy', 'much', 'she']
+
+Top 10 words for topic  3
+['to', 'i', 'be', 'not', 'for', 'the', 'up', 'this', 'at', 'wait']
+
+Top 10 words for topic  4
+['my', 'i', 'to', 'the', 'a', 'me', 'of', 'in', 'get', 'have']
+
+Top 10 words for topic  5
+['the', 'be', 'of', 'in', 'a', 'to', '😂', 'your', 'for', 'on']
+Size of the feature sets: train =   6 , test =  6
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.454
+Precision: 0.516
+Recall: 0.454
+F_score: 0.451
+
+              precision    recall  f1-score   support
+
+           0       0.61      0.35      0.44      2323
+           1       0.37      0.63      0.47      1419
+
+    accuracy                           0.45      3742
+   macro avg       0.49      0.49      0.45      3742
+weighted avg       0.52      0.45      0.45      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.442
+Precision: 0.502
+Recall: 0.442
+F_score: 0.438
+
+              precision    recall  f1-score   support
+
+           0       0.59      0.34      0.43      2323
+           1       0.36      0.61      0.45      1419
+
+    accuracy                           0.44      3742
+   macro avg       0.47      0.47      0.44      3742
+weighted avg       0.50      0.44      0.44      3742
+
+
+=========================    FEATURES    =========================
+
+                     topics_no           8
+                        passes          20
+                     use_nouns           1
+                     use_verbs           1
+                       use_all           0
+
+==================================================================
+
+
+Top 10 words for topic  0
+['be', 'have', 'feel', 'friend', 'time', 'do', 'girl', 'watch', 'homework', 'everyone']
+
+Top 10 words for topic  1
+['love', 'take', 'thank', 'get', 'class', 'hate', 'be', 'please', 'song', 'make']
+
+Top 10 words for topic  2
+['be', 'day', 'go', 'have', 'sleep', 'work', 'thanks', 'get', 'wake', 'morning']
+
+Top 10 words for topic  3
+['do', 'be', 'want', "don't", 'know', 'need', 'say', 'have', 'get', 'nothing']
+
+Top 10 words for topic  4
+['be', 'could', 'get', 'wish', 'miss', 'money', 'food', 'come', 'test', 'have']
+
+Top 10 words for topic  5
+['be', 'have', 'people', 'thing', 'life', 'birthday', 'hope', 'man', 'get', 'stop']
+
+Top 10 words for topic  6
+["can't", 'wait', 'be', 'get', 'phone', 'see', 'look', 'boy', 'die', 'text']
+
+Top 10 words for topic  7
+['be', 'will', 'have', 'year', 'night', "don't", 'make', 'care', 'can', 'tomorrow']
+Size of the feature sets: train =   8 , test =  8
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.568
+Precision: 0.561
+Recall: 0.568
+F_score: 0.564
+
+              precision    recall  f1-score   support
+
+           0       0.64      0.68      0.66      2323
+           1       0.42      0.39      0.40      1419
+
+    accuracy                           0.57      3742
+   macro avg       0.53      0.53      0.53      3742
+weighted avg       0.56      0.57      0.56      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.539
+Precision: 0.551
+Recall: 0.539
+F_score: 0.544
+
+              precision    recall  f1-score   support
+
+           0       0.64      0.59      0.61      2323
+           1       0.41      0.46      0.43      1419
+
+    accuracy                           0.54      3742
+   macro avg       0.52      0.52      0.52      3742
+weighted avg       0.55      0.54      0.54      3742
+
+
+=========================    FEATURES    =========================
+
+                     topics_no           8
+                        passes          20
+                     use_nouns           0
+                     use_verbs           0
+                       use_all           1
+
+==================================================================
+
+
+Top 10 words for topic  0
+['love', 'i', 'be', 'the', 'day', 'you', 'a', 'my', 'have', 'so']
+
+Top 10 words for topic  1
+['you', 'to', 'be', 'a', 'your', 'the', 'it', 'that', 'u', 'do']
+
+Top 10 words for topic  2
+['to', 'the', 'i', 'for', 'my', 'wait', 'have', 'go', 'in', 'a']
+
+Top 10 words for topic  3
+['be', 'the', 'i', 'to', 'a', 'of', 'have', 'in', 'not', 'for']
+
+Top 10 words for topic  4
+['i', 'my', 'me', 'like', 'to', "i'm", 'when', 'get', 'it', 'hate']
+
+Top 10 words for topic  5
+['the', 'be', 'a', 'with', 'in', 'great', 'of', '️', '#', '❤']
+
+Top 10 words for topic  6
+['be', 'so', 'not', "i'm", 'i', 'a', '😂', 'this', 'good', 'fun']
+
+Top 10 words for topic  7
+['a', 'to', 'be', 'my', 'the', 'up', 'of', 'in', 'he', 'i']
+Size of the feature sets: train =   8 , test =  8
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.475
+Precision: 0.502
+Recall: 0.475
+F_score: 0.483
+
+              precision    recall  f1-score   support
+
+           0       0.59      0.49      0.54      2323
+           1       0.35      0.46      0.40      1419
+
+    accuracy                           0.47      3742
+   macro avg       0.47      0.47      0.47      3742
+weighted avg       0.50      0.47      0.48      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.474
+Precision: 0.503
+Recall: 0.474
+F_score: 0.481
+
+              precision    recall  f1-score   support
+
+           0       0.59      0.48      0.53      2323
+           1       0.35      0.47      0.40      1419
+
+    accuracy                           0.47      3742
+   macro avg       0.47      0.47      0.47      3742
+weighted avg       0.50      0.47      0.48      3742
+
+
+=========================    FEATURES    =========================
+
+                     topics_no          10
+                        passes          30
+                     use_nouns           0
+                     use_verbs           0
+                       use_all           1
+
+==================================================================
+
+
+Top 10 words for topic  0
+['my', 'the', 'in', 'be', 'of', 'me', 'at', 'your', 'phone', 'best']
+
+Top 10 words for topic  1
+['i', 'be', 'to', 'my', 'a', 'have', 'for', 'not', 'this', 'of']
+
+Top 10 words for topic  2
+['be', 'a', 'you', 'the', 'that', 'u', 'of', 'your', 'to', 'have']
+
+Top 10 words for topic  3
+['a', 'the', 'great', 'day', 'be', 'to', 'happy', 'not', 'have', 'in']
+
+Top 10 words for topic  4
+['love', 'he', 'my', 'i', 'his', 'be', '😍', 'not', 'him', 'bed']
+
+Top 10 words for topic  5
+['i', 'be', 'to', 'me', 'so', 'my', 'that', 'you', 'love', 'just']
+
+Top 10 words for topic  6
+['to', 'me', 'you', 'need', '😂', 'it', 'do', 'look', 'when', 'try']
+
+Top 10 words for topic  7
+['you', 'be', 'thank', 'love', 'for', 'so', 'no', 'your', "you're", 'i']
+
+Top 10 words for topic  8
+['the', 'to', 'be', 'of', 'in', 'for', 'on', 'out', 'time', 'we']
+
+Top 10 words for topic  9
+['a', 'like', 'the', 'be', 'in', 'of', 'nothing', 'to', 'nice', 'with']
+Size of the feature sets: train =   10 , test =  10
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.582
+Precision: 0.598
+Recall: 0.582
+F_score: 0.587
+
+              precision    recall  f1-score   support
+
+           0       0.68      0.61      0.64      2323
+           1       0.46      0.54      0.50      1419
+
+    accuracy                           0.58      3742
+   macro avg       0.57      0.57      0.57      3742
+weighted avg       0.60      0.58      0.59      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.582
+Precision: 0.599
+Recall: 0.582
+F_score: 0.588
+
+              precision    recall  f1-score   support
+
+           0       0.69      0.61      0.64      2323
+           1       0.46      0.54      0.50      1419
+
+    accuracy                           0.58      3742
+   macro avg       0.57      0.57      0.57      3742
+weighted avg       0.60      0.58      0.59      3742
+
+
+=========================    FEATURES    =========================
+
+                     topics_no          15
+                        passes          30
+                     use_nouns           0
+                     use_verbs           0
+                       use_all           1
+
+==================================================================
+
+
+Top 10 words for topic  0
+['be', 'not', 'it', 'i', 'a', 'so', 'have', 'this', 'fun', 'now']
+
+Top 10 words for topic  1
+['the', 'for', '#', '😍', 'play', 'game', 'thank', 'live', 'in', 'free']
+
+Top 10 words for topic  2
+['he', '😂', 'she', 'her', 'his', '😭', 'him', 'to', '😊', 'kid']
+
+Top 10 words for topic  3
+['a', 'you', 'happy', 'have', 'day', 'for', 'great', 'be', 'what', 'birthday']
+
+Top 10 words for topic  4
+['you', 'your', 'u', 'do', 'if', 'that', 'be', 'when', 'it', 'a']
+
+Top 10 words for topic  5
+['at', 'the', 'a', 'me', 'in', "you're", 'other', 'cute', 'guess', 'look']
+
+Top 10 words for topic  6
+['i', 'to', 'be', "don't", 'my', 'it', 'like', 'me', 'just', "i'm"]
+
+Top 10 words for topic  7
+['a', 'be', 'like', 'this', 'not', 'look', 'good', 'man', 'pretty', 'nothing']
+
+Top 10 words for topic  8
+['to', 'i', 'for', 'up', 'wait', "can't", 'the', 'sleep', 'go', 'be']
+
+Top 10 words for topic  9
+['the', 'of', 'in', 'be', 'best', 'to', 'this', 'a', 'thing', 'morning']
+
+Top 10 words for topic  10
+['to', 'the', 'be', 'we', 'of', 'it', 'a', 'in', 'they', 'who']
+
+Top 10 words for topic  11
+['i', 'love', 'me', 'you', 'so', 'my', 'to', 'be', 'much', 'for']
+
+Top 10 words for topic  12
+['the', 'to', 'my', 'on', 'of', 'nice', 'a', 'be', 'by', 'with']
+
+Top 10 words for topic  13
+['no', 'more', 'be', 'than', 'a', 'have', 'not', 'so', "i'm", 'for']
+
+Top 10 words for topic  14
+['my', 'i', 'of', 'love', 'work', 'to', 'in', '️', 'out', 'home']
+Size of the feature sets: train =   15 , test =  15
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.508
+Precision: 0.579
+Recall: 0.508
+F_score: 0.505
+
+              precision    recall  f1-score   support
+
+           0       0.68      0.39      0.50      2323
+           1       0.41      0.70      0.52      1419
+
+    accuracy                           0.51      3742
+   macro avg       0.55      0.55      0.51      3742
+weighted avg       0.58      0.51      0.51      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.505
+Precision: 0.576
+Recall: 0.505
+F_score: 0.502
+
+              precision    recall  f1-score   support
+
+           0       0.68      0.39      0.49      2323
+           1       0.41      0.70      0.52      1419
+
+    accuracy                           0.51      3742
+   macro avg       0.54      0.54      0.51      3742
+weighted avg       0.58      0.51      0.50      3742
+
+
+=========================    FEATURES    =========================
+
+                     topics_no          20
+                        passes          40
+                     use_nouns           0
+                     use_verbs           0
+                       use_all           1
+
+==================================================================
+
+
+Top 10 words for topic  0
+['to', 'the', 'wait', 'for', 'be', "can't", 'my', 'i', 'year', 'this']
+
+Top 10 words for topic  1
+['u', 'a', 'the', 'of', 'be', 'ur', 'money', 'in', 'lot', 'for']
+
+Top 10 words for topic  2
+['a', 'be', 'great', 'not', 'good', 'girl', 'friend', 'should', 'with', 'have']
+
+Top 10 words for topic  3
+['i', 'to', 'a', 'day', 'my', 'work', 'go', 'have', 'at', 'get']
+
+Top 10 words for topic  4
+['to', 'new', '😊', 'some', 'by', 'beautiful', 'though', 'free', 'enough', 'listen']
+
+Top 10 words for topic  5
+['i', 'love', 'my', 'be', 'in', 'not', '😭', 'live', 'always', 'mom']
+
+Top 10 words for topic  6
+['his', 'right', 'look', '❤', 'he', 'now', 'school', '️', 'kid', 'to']
+
+Top 10 words for topic  7
+['😂', 'im', '️', '☺', 'feel', 'me', 'turn', 'off', 'tire', 'wrong']
+
+Top 10 words for topic  8
+['you', 'that', 'be', 'to', "you're", 'when', 'know', 'do', 'so', 'have']
+
+Top 10 words for topic  9
+['if', 'would', 'to', 'it', 'you', 'a', 'will', 'back', 'let', 'bed']
+
+Top 10 words for topic  10
+['so', 'not', 'be', 'much', 'too', "that's", 'this', "i'm", 'awesome', 'that']
+
+Top 10 words for topic  11
+['i', 'the', 'my', '😍', 'hate', 'these', 'time', 'all', 'me', 'bitch']
+
+Top 10 words for topic  12
+['i', 'to', 'be', 'it', 'like', 'me', 'just', 'not', 'people', 'say']
+
+Top 10 words for topic  13
+['i', 'more', 'happy', 'my', 'than', 'have', 'phone', 'fuck', 'birthday', 'life']
+
+Top 10 words for topic  14
+['your', 'you', 'for', 'thank', 'a', 'of', 'be', 'love', 'on', 'long']
+
+Top 10 words for topic  15
+['the', 'be', 'in', 'of', 'to', 'a', 'on', 'out', 'their', 'best']
+
+Top 10 words for topic  16
+['no', 'fun', 'have', 'night', 'be', 'last', 'amaze', ':)', 'it', 'hope']
+
+Top 10 words for topic  17
+['she', 'her', 'about', 'talk', 'stop', 'me', 'shit', 'could', 'ask', 'over']
+
+Top 10 words for topic  18
+['up', 'to', 'sleep', 'be', 'i', 'nothing', 'wake', 'in', 'like', 'a']
+
+Top 10 words for topic  19
+['we', 'be', 'the', '#', 'to', 'miss', 'our', 'here', 'this', 'weekend']
+Size of the feature sets: train =   20 , test =  20
+Class ratio:  {0: 1.0, 1: 1.2954924874791318}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.580
+Precision: 0.633
+Recall: 0.580
+F_score: 0.584
+
+              precision    recall  f1-score   support
+
+           0       0.74      0.51      0.60      2323
+           1       0.46      0.70      0.56      1419
+
+    accuracy                           0.58      3742
+   macro avg       0.60      0.60      0.58      3742
+weighted avg       0.63      0.58      0.58      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.550
+Precision: 0.589
+Recall: 0.550
+F_score: 0.556
+
+              precision    recall  f1-score   support
+
+           0       0.68      0.51      0.59      2323
+           1       0.43      0.61      0.51      1419
+
+    accuracy                           0.55      3742
+   macro avg       0.56      0.56      0.55      3742
+weighted avg       0.59      0.55      0.56      3742
+

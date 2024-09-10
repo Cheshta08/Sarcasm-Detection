@@ -1,0 +1,23 @@
+Current date and time: 2024-08-18 08:10:04.451074
+
+Size of the train set:  51189
+Size of the test set:  3742
+Processing TRAIN SET features...
+
+Completion time of extracting train models: 1606.456 s = 26.774 min
+Processing TEST SET features...
+
+Completion time of extracting test models: 88.696 s = 1.478 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           0
+                     Sentiment           0
+                    LDA topics           0
+                    Similarity           1
+
+==================================================================
+
+Size of the feature sets: train =   2 , test =  2

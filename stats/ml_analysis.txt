@@ -1,0 +1,847 @@
+Current date and time: 2024-08-18 07:31:09.941075
+
+Size of the train set:  51189
+Size of the test set:  3742
+Processing TRAIN SET features...
+
+Completion time of extracting train models: 1590.679 s = 26.511 min
+Processing TEST SET features...
+
+Completion time of extracting train models: 91.964 s = 1.533 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           0
+                     Sentiment           0
+                    LDA topics           0
+                    Similarity           1
+
+==================================================================
+
+Size of the feature sets: train =   2 , test =  2
+Shape of the x train set (51189, 2)
+Shape of the x test set (3742, 2)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.461
+Precision: 0.489
+Recall: 0.461
+F_score: 0.469
+
+              precision    recall  f1-score   support
+
+           0       0.58      0.47      0.52      2323
+           1       0.34      0.44      0.38      1419
+
+    accuracy                           0.46      3742
+   macro avg       0.46      0.46      0.45      3742
+weighted avg       0.49      0.46      0.47      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.459
+Precision: 0.493
+Recall: 0.459
+F_score: 0.467
+
+              precision    recall  f1-score   support
+
+           0       0.58      0.45      0.51      2323
+           1       0.34      0.47      0.40      1419
+
+    accuracy                           0.46      3742
+   macro avg       0.46      0.46      0.45      3742
+weighted avg       0.49      0.46      0.47      3742
+
+Completion time of the Linear SVM model: 1.863 s = 0.031 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           0
+                     Sentiment           0
+                    LDA topics           1
+                    Similarity           0
+
+==================================================================
+
+Size of the feature sets: train =   8 , test =  8
+Shape of the x train set (51189, 8)
+Shape of the x test set (3742, 8)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.502
+Precision: 0.528
+Recall: 0.502
+F_score: 0.509
+
+              precision    recall  f1-score   support
+
+           0       0.62      0.51      0.56      2323
+           1       0.38      0.49      0.43      1419
+
+    accuracy                           0.50      3742
+   macro avg       0.50      0.50      0.49      3742
+weighted avg       0.53      0.50      0.51      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.544
+Precision: 0.570
+Recall: 0.544
+F_score: 0.551
+
+              precision    recall  f1-score   support
+
+           0       0.66      0.55      0.60      2323
+           1       0.42      0.54      0.47      1419
+
+    accuracy                           0.54      3742
+   macro avg       0.54      0.54      0.54      3742
+weighted avg       0.57      0.54      0.55      3742
+
+Completion time of the Linear SVM model: 2.059 s = 0.034 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           0
+                     Sentiment           0
+                    LDA topics           1
+                    Similarity           1
+
+==================================================================
+
+Size of the feature sets: train =   10 , test =  10
+Shape of the x train set (51189, 10)
+Shape of the x test set (3742, 10)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.488
+Precision: 0.518
+Recall: 0.488
+F_score: 0.495
+
+              precision    recall  f1-score   support
+
+           0       0.61      0.49      0.54      2323
+           1       0.37      0.49      0.42      1419
+
+    accuracy                           0.49      3742
+   macro avg       0.49      0.49      0.48      3742
+weighted avg       0.52      0.49      0.50      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.478
+Precision: 0.512
+Recall: 0.478
+F_score: 0.485
+
+              precision    recall  f1-score   support
+
+           0       0.60      0.46      0.52      2323
+           1       0.36      0.50      0.42      1419
+
+    accuracy                           0.48      3742
+   macro avg       0.48      0.48      0.47      3742
+weighted avg       0.51      0.48      0.49      3742
+
+Completion time of the Linear SVM model: 3.701 s = 0.062 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           0
+                     Sentiment           1
+                    LDA topics           0
+                    Similarity           0
+
+==================================================================
+
+Size of the feature sets: train =   16 , test =  16
+Shape of the x train set (51189, 16)
+Shape of the x test set (3742, 16)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.631
+Precision: 0.620
+Recall: 0.631
+F_score: 0.623
+
+              precision    recall  f1-score   support
+
+           0       0.68      0.76      0.72      2323
+           1       0.52      0.43      0.47      1419
+
+    accuracy                           0.63      3742
+   macro avg       0.60      0.59      0.59      3742
+weighted avg       0.62      0.63      0.62      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.637
+Precision: 0.626
+Recall: 0.637
+F_score: 0.628
+
+              precision    recall  f1-score   support
+
+           0       0.69      0.77      0.72      2323
+           1       0.53      0.42      0.47      1419
+
+    accuracy                           0.64      3742
+   macro avg       0.61      0.60      0.60      3742
+weighted avg       0.63      0.64      0.63      3742
+
+Completion time of the Linear SVM model: 6.842 s = 0.114 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           0
+                     Sentiment           1
+                    LDA topics           0
+                    Similarity           1
+
+==================================================================
+
+Size of the feature sets: train =   18 , test =  18
+Shape of the x train set (51189, 18)
+Shape of the x test set (3742, 18)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.628
+Precision: 0.618
+Recall: 0.628
+F_score: 0.620
+
+              precision    recall  f1-score   support
+
+           0       0.68      0.75      0.71      2323
+           1       0.51      0.43      0.47      1419
+
+    accuracy                           0.63      3742
+   macro avg       0.60      0.59      0.59      3742
+weighted avg       0.62      0.63      0.62      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.618
+Precision: 0.612
+Recall: 0.618
+F_score: 0.615
+
+              precision    recall  f1-score   support
+
+           0       0.68      0.72      0.70      2323
+           1       0.50      0.46      0.48      1419
+
+    accuracy                           0.62      3742
+   macro avg       0.59      0.59      0.59      3742
+weighted avg       0.61      0.62      0.61      3742
+
+Completion time of the Linear SVM model: 16.301 s = 0.272 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           0
+                     Sentiment           1
+                    LDA topics           1
+                    Similarity           0
+
+==================================================================
+
+Size of the feature sets: train =   24 , test =  24
+Shape of the x train set (51189, 24)
+Shape of the x test set (3742, 24)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.596
+Precision: 0.610
+Recall: 0.596
+F_score: 0.601
+
+              precision    recall  f1-score   support
+
+           0       0.69      0.62      0.66      2323
+           1       0.47      0.55      0.51      1419
+
+    accuracy                           0.60      3742
+   macro avg       0.58      0.59      0.58      3742
+weighted avg       0.61      0.60      0.60      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.635
+Precision: 0.627
+Recall: 0.635
+F_score: 0.630
+
+              precision    recall  f1-score   support
+
+           0       0.69      0.75      0.72      2323
+           1       0.52      0.45      0.49      1419
+
+    accuracy                           0.64      3742
+   macro avg       0.61      0.60      0.60      3742
+weighted avg       0.63      0.64      0.63      3742
+
+Completion time of the Linear SVM model: 17.320 s = 0.289 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           0
+                     Sentiment           1
+                    LDA topics           1
+                    Similarity           1
+
+==================================================================
+
+Size of the feature sets: train =   26 , test =  26
+Shape of the x train set (51189, 26)
+Shape of the x test set (3742, 26)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.599
+Precision: 0.609
+Recall: 0.599
+F_score: 0.603
+
+              precision    recall  f1-score   support
+
+           0       0.69      0.64      0.67      2323
+           1       0.47      0.53      0.50      1419
+
+    accuracy                           0.60      3742
+   macro avg       0.58      0.59      0.58      3742
+weighted avg       0.61      0.60      0.60      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.620
+Precision: 0.621
+Recall: 0.620
+F_score: 0.620
+
+              precision    recall  f1-score   support
+
+           0       0.70      0.69      0.69      2323
+           1       0.50      0.50      0.50      1419
+
+    accuracy                           0.62      3742
+   macro avg       0.60      0.60      0.60      3742
+weighted avg       0.62      0.62      0.62      3742
+
+Completion time of the Linear SVM model: 27.059 s = 0.451 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           1
+                     Sentiment           0
+                    LDA topics           0
+                    Similarity           0
+
+==================================================================
+
+Size of the feature sets: train =   24 , test =  24
+Shape of the x train set (51189, 24)
+Shape of the x test set (3742, 24)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.507
+Precision: 0.536
+Recall: 0.507
+F_score: 0.515
+
+              precision    recall  f1-score   support
+
+           0       0.63      0.51      0.56      2323
+           1       0.39      0.51      0.44      1419
+
+    accuracy                           0.51      3742
+   macro avg       0.51      0.51      0.50      3742
+weighted avg       0.54      0.51      0.51      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.506
+Precision: 0.534
+Recall: 0.506
+F_score: 0.513
+
+              precision    recall  f1-score   support
+
+           0       0.63      0.51      0.56      2323
+           1       0.38      0.50      0.43      1419
+
+    accuracy                           0.51      3742
+   macro avg       0.50      0.50      0.50      3742
+weighted avg       0.53      0.51      0.51      3742
+
+Completion time of the Linear SVM model: 4.365 s = 0.073 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           1
+                     Sentiment           0
+                    LDA topics           0
+                    Similarity           1
+
+==================================================================
+
+Size of the feature sets: train =   26 , test =  26
+Shape of the x train set (51189, 26)
+Shape of the x test set (3742, 26)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.505
+Precision: 0.535
+Recall: 0.505
+F_score: 0.512
+
+              precision    recall  f1-score   support
+
+           0       0.63      0.50      0.56      2323
+           1       0.39      0.52      0.44      1419
+
+    accuracy                           0.50      3742
+   macro avg       0.51      0.51      0.50      3742
+weighted avg       0.54      0.50      0.51      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.518
+Precision: 0.514
+Recall: 0.518
+F_score: 0.516
+
+              precision    recall  f1-score   support
+
+           0       0.61      0.63      0.62      2323
+           1       0.36      0.34      0.35      1419
+
+    accuracy                           0.52      3742
+   macro avg       0.48      0.48      0.48      3742
+weighted avg       0.51      0.52      0.52      3742
+
+Completion time of the Linear SVM model: 12.466 s = 0.208 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           1
+                     Sentiment           0
+                    LDA topics           1
+                    Similarity           0
+
+==================================================================
+
+Size of the feature sets: train =   32 , test =  32
+Shape of the x train set (51189, 32)
+Shape of the x test set (3742, 32)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.529
+Precision: 0.559
+Recall: 0.529
+F_score: 0.536
+
+              precision    recall  f1-score   support
+
+           0       0.65      0.52      0.58      2323
+           1       0.41      0.54      0.47      1419
+
+    accuracy                           0.53      3742
+   macro avg       0.53      0.53      0.52      3742
+weighted avg       0.56      0.53      0.54      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.532
+Precision: 0.562
+Recall: 0.532
+F_score: 0.539
+
+              precision    recall  f1-score   support
+
+           0       0.65      0.52      0.58      2323
+           1       0.41      0.55      0.47      1419
+
+    accuracy                           0.53      3742
+   macro avg       0.53      0.54      0.53      3742
+weighted avg       0.56      0.53      0.54      3742
+
+Completion time of the Linear SVM model: 8.069 s = 0.134 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           1
+                     Sentiment           0
+                    LDA topics           1
+                    Similarity           1
+
+==================================================================
+
+Size of the feature sets: train =   34 , test =  34
+Shape of the x train set (51189, 34)
+Shape of the x test set (3742, 34)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.525
+Precision: 0.556
+Recall: 0.525
+F_score: 0.532
+
+              precision    recall  f1-score   support
+
+           0       0.65      0.51      0.57      2323
+           1       0.41      0.54      0.46      1419
+
+    accuracy                           0.52      3742
+   macro avg       0.53      0.53      0.52      3742
+weighted avg       0.56      0.52      0.53      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.541
+Precision: 0.525
+Recall: 0.541
+F_score: 0.531
+
+              precision    recall  f1-score   support
+
+           0       0.62      0.68      0.65      2323
+           1       0.37      0.31      0.34      1419
+
+    accuracy                           0.54      3742
+   macro avg       0.50      0.50      0.49      3742
+weighted avg       0.53      0.54      0.53      3742
+
+Completion time of the Linear SVM model: 16.502 s = 0.275 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           1
+                     Sentiment           1
+                    LDA topics           0
+                    Similarity           0
+
+==================================================================
+
+Size of the feature sets: train =   40 , test =  40
+Shape of the x train set (51189, 40)
+Shape of the x test set (3742, 40)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.600
+Precision: 0.610
+Recall: 0.600
+F_score: 0.604
+
+              precision    recall  f1-score   support
+
+           0       0.69      0.64      0.67      2323
+           1       0.48      0.53      0.50      1419
+
+    accuracy                           0.60      3742
+   macro avg       0.58      0.59      0.58      3742
+weighted avg       0.61      0.60      0.60      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.600
+Precision: 0.611
+Recall: 0.600
+F_score: 0.604
+
+              precision    recall  f1-score   support
+
+           0       0.69      0.64      0.66      2323
+           1       0.48      0.54      0.51      1419
+
+    accuracy                           0.60      3742
+   macro avg       0.58      0.59      0.59      3742
+weighted avg       0.61      0.60      0.60      3742
+
+Completion time of the Linear SVM model: 24.574 s = 0.410 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           1
+                     Sentiment           1
+                    LDA topics           0
+                    Similarity           1
+
+==================================================================
+
+Size of the feature sets: train =   42 , test =  42
+Shape of the x train set (51189, 42)
+Shape of the x test set (3742, 42)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.598
+Precision: 0.607
+Recall: 0.598
+F_score: 0.601
+
+              precision    recall  f1-score   support
+
+           0       0.69      0.64      0.66      2323
+           1       0.47      0.53      0.50      1419
+
+    accuracy                           0.60      3742
+   macro avg       0.58      0.58      0.58      3742
+weighted avg       0.61      0.60      0.60      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.600
+Precision: 0.612
+Recall: 0.600
+F_score: 0.604
+
+              precision    recall  f1-score   support
+
+           0       0.69      0.64      0.66      2323
+           1       0.48      0.54      0.51      1419
+
+    accuracy                           0.60      3742
+   macro avg       0.59      0.59      0.59      3742
+weighted avg       0.61      0.60      0.60      3742
+
+Completion time of the Linear SVM model: 36.343 s = 0.606 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           1
+                     Sentiment           1
+                    LDA topics           1
+                    Similarity           0
+
+==================================================================
+
+Size of the feature sets: train =   48 , test =  48
+Shape of the x train set (51189, 48)
+Shape of the x test set (3742, 48)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.610
+Precision: 0.619
+Recall: 0.610
+F_score: 0.613
+
+              precision    recall  f1-score   support
+
+           0       0.70      0.65      0.67      2323
+           1       0.49      0.54      0.51      1419
+
+    accuracy                           0.61      3742
+   macro avg       0.59      0.60      0.59      3742
+weighted avg       0.62      0.61      0.61      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.606
+Precision: 0.616
+Recall: 0.606
+F_score: 0.610
+
+              precision    recall  f1-score   support
+
+           0       0.70      0.64      0.67      2323
+           1       0.48      0.54      0.51      1419
+
+    accuracy                           0.61      3742
+   macro avg       0.59      0.59      0.59      3742
+weighted avg       0.62      0.61      0.61      3742
+
+Completion time of the Linear SVM model: 37.086 s = 0.618 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           1
+                     Sentiment           1
+                    LDA topics           1
+                    Similarity           1
+
+==================================================================
+
+Size of the feature sets: train =   50 , test =  50
+Shape of the x train set (51189, 50)
+Shape of the x test set (3742, 50)
+Class ratio:  {0: 1.0, 1: 1.093362777573304}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.609
+Precision: 0.618
+Recall: 0.609
+F_score: 0.612
+
+              precision    recall  f1-score   support
+
+           0       0.70      0.65      0.67      2323
+           1       0.49      0.54      0.51      1419
+
+    accuracy                           0.61      3742
+   macro avg       0.59      0.60      0.59      3742
+weighted avg       0.62      0.61      0.61      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.607
+Precision: 0.618
+Recall: 0.607
+F_score: 0.611
+
+              precision    recall  f1-score   support
+
+           0       0.70      0.64      0.67      2323
+           1       0.48      0.55      0.51      1419
+
+    accuracy                           0.61      3742
+   macro avg       0.59      0.60      0.59      3742
+weighted avg       0.62      0.61      0.61      3742
+
+Completion time of the Linear SVM model: 50.367 s = 0.839 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           1
+                     POS-grams           0
+                     Sentiment           0
+                    LDA topics           0
+                    Similarity           0
+
+==================================================================
+

@@ -1,0 +1,5 @@
+Current date and time: 2024-08-05 23:05:27.449107
+
+Mean of train tweets:  17.74902811150833
+Max tweet length is =  47
+There are 42911 unique tokens.
