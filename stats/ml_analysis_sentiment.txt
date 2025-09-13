@@ -1,0 +1,65 @@
+Current date and time: 2024-12-18 11:39:07.206271
+
+Size of the train set:  82074
+Size of the test set:  3742
+Processing TRAIN SET features...
+
+Completion time of extracting train models: 1126.300 s = 18.772 min
+Processing TEST SET features...
+
+Completion time of extracting train models: 59.602 s = 0.993 min
+
+=========================    FEATURES    =========================
+
+                     Pragmatic           0
+                 Lexical-grams           0
+                     POS-grams           0
+                     Sentiment           1
+                    LDA topics           0
+                    Similarity           0
+
+==================================================================
+
+Size of the feature sets: train =   16 , test =  16
+Shape of the x train set (82074, 16)
+Shape of the x test set (3742, 16)
+Class ratio:  {0: 0.5336647415746765, 1: 0.4663352584253235}
+
+==================================================================
+          Linear SVM
+==================================================================
+
+Accuracy: 0.722
+Precision: 0.755
+Recall: 0.722
+F_score: 0.683
+
+              precision    recall  f1-score   support
+
+           0       0.70      0.96      0.81      2323
+           1       0.84      0.33      0.47      1419
+
+    accuracy                           0.72      3742
+   macro avg       0.77      0.65      0.64      3742
+weighted avg       0.75      0.72      0.68      3742
+
+
+==================================================================
+ Logistic Regression
+==================================================================
+
+Accuracy: 0.720
+Precision: 0.749
+Recall: 0.720
+F_score: 0.681
+
+              precision    recall  f1-score   support
+
+           0       0.70      0.96      0.81      2323
+           1       0.83      0.33      0.47      1419
+
+    accuracy                           0.72      3742
+   macro avg       0.76      0.64      0.64      3742
+weighted avg       0.75      0.72      0.68      3742
+
+Completion time of the Linear SVM model: 8.534 s = 0.142 min
