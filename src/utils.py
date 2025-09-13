@@ -1,8 +1,9 @@
 import sys, datetime, os, math
 import numpy as np
 import classifiers
+import keras
 import data_processing as data_proc
-from keras.models import model_from_json
+from keras.optimizers import SGD
 from keras.utils import plot_model
 from sklearn.decomposition import TruncatedSVD
 from sklearn import metrics
@@ -13,17 +14,16 @@ from collections import Counter, OrderedDict
 from pandas import read_csv
 from numpy.random import seed, shuffle
 import tensorflow as tf
-K = tf.keras.backend
+from keras import backend as K
 from tensorflow.keras.models import model_from_json
-from tensorflow.keras.saving import register_keras_serializable
+import pickle
 
 path = os.getcwd()[:os.getcwd().rfind('\\')]
 
-
 def load_file(filename):
     with open(filename, 'r', encoding='utf-8') as file:
-        
-     return file.readlines()
+        return [line.strip() for line in file]
+
 
 
 def save_file(lines, filename):
@@ -87,6 +87,9 @@ def save_model(model, json_name, h5_weights_name):
     model.save_weights(h5_weights_name)
     print("Saved model with json name %s, and weights %s" % (json_name, h5_weights_name))
 
+
+# def custom_optimizer():
+#     return Adam(learning_rate=0.0001, beta_1=0.9, beta_2=0.99, decay=0.01)
 
 def load_model(json_name, h5_weights_name, verbose=False):
     with open(json_name, 'r') as json_file:
@@ -164,11 +167,19 @@ def get_classes_ratio(labels):
     return ratio
 
 
+# def get_classes_ratio_as_dict(labels):
+#     ratio = Counter(labels)
+#     ratio_dict = {0: float(max(ratio[0], ratio[1]) / ratio[0]), 1: float(max(ratio[0], ratio[1]) / ratio[1])}
+#     print('Class ratio: ', ratio_dict)
+#     return ratio_dict
+
 def get_classes_ratio_as_dict(labels):
     ratio = Counter(labels)
-    ratio_dict = {0: float(max(ratio[0], ratio[1]) / ratio[0]), 1: float(max(ratio[0], ratio[1]) / ratio[1])}
+    total = sum(ratio.values())
+    ratio_dict = {0: float(ratio[0] / total), 1: float(ratio[1] / total)}
     print('Class ratio: ', ratio_dict)
     return ratio_dict
+
 
 
 def extract_features_from_dict(train_features, test_features):
@@ -199,10 +210,14 @@ def feature_scaling(features):
 def run_supervised_learning_models(train_features, train_labels, test_features, test_labels,
                                    make_feature_analysis=False, feature_names=None, top_features=0, plot_name="coeff"):
     class_ratio = get_classes_ratio_as_dict(train_labels)   # alternatively, can be set class_ratio = 'balanced'
-    classifiers.linear_svm_grid(train_features, train_labels, test_features, test_labels, class_ratio,
+    svm_model=classifiers.linear_svm_grid(train_features, train_labels, test_features, test_labels, class_ratio,
                                 make_feature_analysis, feature_names, top_features, plot_name)
-    classifiers.logistic_regression_grid(train_features, train_labels, test_features, test_labels, class_ratio,
+    with open('svm_model.pkl', 'wb') as svm_file:
+        pickle.dump(svm_model, svm_file)
+    logistic_model=classifiers.logistic_regression_grid(train_features, train_labels, test_features, test_labels, class_ratio,
                                          make_feature_analysis, feature_names, top_features, plot_name)
+    with open('logistic_model.pkl', 'wb') as logistic_file:
+        pickle.dump(logistic_model, logistic_file)
     # classifiers.nonlinear_svm(train_features, train_labels, test_features, test_labels, class_ratio,
     #                          make_feature_analysis, feature_names, top_features, plot_name)
 
@@ -498,22 +513,22 @@ def get_similarity_measures(tweet, vec_map, weighted=False, verbose=True):
 
 
 # Custom metric function adjusted from https://stackoverflow.com/questions/43547402/how-to-calculate-f1-macro-in-keras
-@register_keras_serializable()
+@keras.saving.register_keras_serializable()
 def f1_score(y_true, y_pred):
     # Recall metric. Only computes a batch-wise average of recall,
     # a metric for multi-label classification of how many relevant items are selected.
     def recall(y_true, y_pred):
-        true_positives = K.sum(K.round(K.clip(y_true * y_pred, 0, 1)))
-        possible_positives = K.sum(K.round(K.clip(y_true, 0, 1)))
-        recall = true_positives / (possible_positives + K.epsilon())
+        true_positives = tf.reduce_sum(tf.round(tf.clip_by_value(y_true * y_pred, 0, 1)))
+        possible_positives = tf.reduce_sum(tf.round(tf.clip_by_value(y_true, 0, 1)))
+        recall = true_positives / (possible_positives + tf.keras.backend.epsilon())
         return recall
 
     # Precision metric. Only computes a batch-wise average of precision,
     # a metric for multi-label classification of how many selected items are relevant.
     def precision(y_true, y_pred):
-        true_positives = K.sum(K.round(K.clip(y_true * y_pred, 0, 1)))
-        predicted_positives = K.sum(K.round(K.clip(y_pred, 0, 1)))
-        precision = true_positives / (predicted_positives + K.epsilon())
+        true_positives = tf.reduce_sum(tf.round(tf.clip_by_value(y_true * y_pred, 0, 1)))
+        predicted_positives = tf.reduce_sum(tf.round(tf.clip_by_value(y_pred, 0, 1)))
+        precision = true_positives / (predicted_positives + tf.keras.backend.epsilon())
         return precision
 
     precision = precision(y_true, y_pred)
@@ -613,7 +628,6 @@ def print_features(feature_options, feature_names):
         line_new = '{:>30}  {:>10}'.format(name, value)
         print(line_new)
     print("\n==================================================================\n")
-
 
 def print_feature_values(current_set, pragmatic, lexical, pos, sent, topic, sim):
     i = 0

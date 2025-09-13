@@ -1,10 +1,10 @@
 import re, os, itertools, string,nltk
-from groq import Groq
-import contractions
-# from googletrans import Translator
 
-os.environ["GROQ_API_KEY"] = "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"
-client = Groq( )
+import contractions
+from googletrans import Translator
+
+# os.environ["GROQ_API_KEY"] = "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"
+# client = Groq( )
 
 from collections import Counter
 from nltk.stem.wordnet import WordNetLemmatizer
@@ -32,7 +32,7 @@ word_filename = "word_list_freq.txt"
 #         if re.search(r'[a-zA-Z]', segment):  # Check if the segment contains alphabetic characters (indicating words)
 #             try:
 #                 # Construct the prompt for the model
-#                 prompt = f"Translate '{segment}' from Hinglish to English: and don't give explanation only give me the translated sentence as output "
+#                 prompt = f"Translate '{segment}' from Hinglish to English: and don't give explanation only give me the translated sentence as output"
 #                 response = client.chat.completions.create(
 #                     model="llama3-70b-8192",
 #                     messages=[
@@ -62,7 +62,30 @@ word_filename = "word_list_freq.txt"
 #     final_text = ' '.join(processed_segments)
 #     return final_text
 
+def expand_contractions(text):
+    return contractions.fix(text)
 
+# def hinglish_to_english(tweet):
+#     prompt = f"Translate '{tweet}' to English: and don't give explanation only give me the translated sentence as output "
+#     response = client.chat.completions.create(
+#         model="llama3-70b-8192",
+#         messages=[
+#             {
+#                 "role": "user",
+#                 "content": prompt
+#             }
+#         ],
+#         temperature=1,
+#         max_tokens=1024,
+#         top_p=1,
+#         stream=False,
+#         stop=None
+#     )
+
+#     response_text = response.choices[0].message.content
+#     # lines = response_text.split('\n')
+#     # translated_sentence = lines[-1].strip()
+#     return response_text
 
 
 def build_subj_dicionary(lines):
@@ -265,11 +288,7 @@ def grammatical_clean(tweets, pos_tags, word_file, filename, translate_emojis=Tr
                 tweet = hinglish_to_english(tweet)
 
             tweet = expand_contractions(tweet)
-            tweet = re.sub(r'([!?*&%"~`^+{}\[\]:|<>.-])', r' \1 ', tweet)
-
-            tweet = re.sub(r'\s{2,}', ' ', tweet)
-
-    
+            
             # Remove escape characters like \n, \t, etc.
             tweet = tweet.replace('\n', ' ').replace('\t', ' ').strip()
             
@@ -356,33 +375,6 @@ def grammatical_clean(tweets, pos_tags, word_file, filename, translate_emojis=Tr
     cleaned_tweets = utils.load_file(filename)
     return cleaned_tweets
 
-    
-def expand_contractions(text):
-    return contractions.fix(text)
-
-def hinglish_to_english(tweet):
-    prompt = f"Translate '{tweet}' to English: If the input is already in English, just return the same sentence back without any modifications. Do not give any explanation or additional text, only the translated sentence or the original sentence."
-    
-    response = client.chat.completions.create(
-        model="llama3-70b-8192",
-        messages=[
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-        temperature=1,
-        max_tokens=1024,
-        top_p=1,
-        stream=False,
-        stop=None
-    )
-
-    response_text = response.choices[0].message.content
-    # lines = response_text.split('\n')
-    # translated_sentence = lines[-1].strip()
-    return response_text
-
 def clean(tweets):
 
     word_file=path+"\\res\\word_list.txt"
@@ -393,9 +385,12 @@ def clean(tweets):
     corrected_tweets = []
         
     for tweet in tweets:
-        # tweet = hinglish_to_english(tweet)
-    
-        print(tweet)
+        tweet = hinglish_to_english(tweet)
+        #     Apply initial regex substitutions
+        # translator = Translator()
+
+        # tweet = translator.translate(tweet, dest='en').text
+        # print(tweet)
         tweet = expand_contractions(tweet)
             
         # Remove escape characters like \n, \t, etc.
@@ -434,7 +429,8 @@ def clean(tweets):
                 corrected_tweet.append(emoji_translation)
                 continue
                 
-
+                    
+                # Check and correct repeating characters
                 
                 # Translate emoticons to their description
             if t.lower() in wikipedia_emoticons:

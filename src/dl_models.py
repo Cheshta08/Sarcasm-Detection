@@ -3,13 +3,16 @@ import numpy as np
 import data_processing as data_proc
 from keras.models import Model, Sequential
 from keras.optimizers import Adam
-from keras.layers import Dense, Dropout, Flatten, LSTM, GRU, Bidirectional, Input, Multiply
-from tensorflow.keras.layers import Layer
+from keras.layers import  Reshape,Dense, Dropout, Flatten, LSTM, GRU, Bidirectional, Input, Multiply
+from keras.layers import Layer
+from keras import backend as K
 from keras.layers import Activation, Permute, RepeatVector, Lambda
 from keras.utils import to_categorical
 import tensorflow as tf
-from tensorflow.keras import backend as K
+
 from sklearn.preprocessing import StandardScaler
+# from transformers import BertTokenizer, TFBertModel
+# import tensorflow_text as text
 
 from tensorflow.keras.utils import register_keras_serializable
 from keras import initializers, activations
@@ -20,9 +23,15 @@ from keras.preprocessing.sequence import pad_sequences
 from keras.utils import plot_model
 from numpy.random import seed
 
+
 seed(1337603)
 
 sys.stdout.reconfigure(encoding='utf-8')
+# bert_preprocess = hub.KerasLayer(
+#     "https://kaggle.com/models/tensorflow/bert/TensorFlow2/en-uncased-preprocess/3")
+# bert_encoder = hub.KerasLayer(
+#     "https://www.kaggle.com/models/tensorflow/bert/TensorFlow2/en-uncased-l-12-h-768-a-12/4",
+#     trainable=True)
 
 # Fit and evaluate a simple feed-forward neural network model to analyse the improvements (or not) on BoW/embeddings
 def nn_bow_model(x_train, y_train, x_test, y_test, results, mode,
@@ -68,6 +77,7 @@ def nn_bow_model(x_train, y_train, x_test, y_test, results, mode,
         h5_weights_name = path + "/models/bow_models/h5_bow_" + mode + "_mode.json"
         utils.save_model(model, json_name=json_name, h5_weights_name=h5_weights_name)
 # A standard DNN used as a baseline
+
 def standard_dnn_model(**kwargs):
     X = Dense(kwargs['hidden_units'], kernel_initializer='he_normal', activation='relu')(kwargs['embeddings'])
     X = Flatten()(X)
@@ -158,14 +168,19 @@ class MyAttentionLayer(Layer):
 
     def call(self, x):
         # Insert a dimension of 1 at the last index to the tensor
-        expanded_a = K.expand_dims(self.a)
-        eij = K.tanh(K.squeeze(K.dot(x, expanded_a), axis=-1))
-        ai = K.exp(eij)
-        attention_weights = ai / K.cast(K.sum(ai, axis=1, keepdims=True), K.floatx())
+        expanded_a = tf.expand_dims(self.a, axis=-1)  # Or specify the appropriate axis
+        # Compute eij using tanh activation
+        eij = tf.tanh(tf.squeeze(tf.linalg.matmul(x, expanded_a), axis=-1))
+        # Compute attention scores using exponential
+        ai = tf.exp(eij)
+        # Normalize attention scores
+        attention_weights = ai / tf.reduce_sum(ai, axis=1, keepdims=True)
         # Insert a dimension of 1 at the last index to the tensor
-        attention_weights = K.expand_dims(attention_weights)
+        attention_weights = tf.expand_dims(attention_weights, axis=-1)
+        # Compute the context vector
         context = x * attention_weights
-        return K.sum(context, axis=1)
+        context = tf.reduce_sum(context, axis=1)
+        return context
 
     def compute_output_shape(self, input_shape):
         return (input_shape[0], input_shape[-1])
@@ -176,7 +191,6 @@ def attention_model(**kwargs):
                     dropout=kwargs['dropout'], return_sequences=True)(kwargs['embeddings'])
     attention = MyAttentionLayer()(lstm_out)
     return attention
-
 
 def pretrained_embedding_layer(word2vec_map, word_to_index, embedding_dim, vocab_size, trainable=False):
     embedding_matrix = utils.get_embedding_matrix(word2vec_map, word_to_index, embedding_dim)
@@ -227,6 +241,9 @@ def predict(model, x_test, y_test):
     utils.print_statistics(y, y_pred)
 
 
+
+
+
 # Dictionary to look up the names and architectures for different models
 def dnn_options(name):
     return {
@@ -241,8 +258,8 @@ def dnn_options(name):
     }[name]
 
 
-def run_dl_analysis(train_tweets, test_tweets, y_train, y_test, path, shuffle=True,
-                    max_tweet_length=40, emb_type='glove', trainable=True, plot=True,
+def run_dl_analysis(train_tweets, test_tweets, y_train, y_test, path, shuffle=False,
+                    max_tweet_length=50, emb_type='glove', trainable=True, plot=True,
                     dnn_models=None, epochs=5, batch_size=32, embedding_dim=300, hidden_units=256, dropout=0.5):
     if shuffle:
         train_tweets = utils.shuffle_words(train_tweets)
@@ -251,7 +268,10 @@ def run_dl_analysis(train_tweets, test_tweets, y_train, y_test, path, shuffle=Tr
     # Convert all tweets into sequences of word indices
     tokenizer, train_indices, test_indices = utils.encode_text_as_word_indexes(train_tweets, test_tweets, lower=True)
     word_to_index = tokenizer.word_index
+    np.save('word_to_index.npy', word_to_index)
+
     print('There are %s unique tokens.' % len(word_to_index))
+    
 
     # Pad sequences with 0s
     x_train = pad_sequences(train_indices, maxlen=max_tweet_length, padding='post', truncating='post', value=0.)
@@ -274,7 +294,7 @@ def run_dl_analysis(train_tweets, test_tweets, y_train, y_test, path, shuffle=Tr
         model = build_model(max_tweet_length, embedding_layer, hidden_units, dropout, dnn_architecture=dnn_options(dnn_model))
 
         # Compile the model
-        my_optimizer = Adam(learning_rate=0.0001, beta_1=0.9, beta_2=0.99, decay=0.01)
+        my_optimizer = Adam(learning_rate=0.0001,beta_1=0.9, beta_2=0.99,  decay=0.01)
         model.compile(loss='categorical_crossentropy', optimizer=my_optimizer, metrics=['categorical_accuracy', utils.f1_score])
 
         # Print the model summary
@@ -290,10 +310,11 @@ def run_dl_analysis(train_tweets, test_tweets, y_train, y_test, path, shuffle=Tr
         # Prepare the callbacks
         save_best = ModelCheckpoint(
         monitor='val_categorical_accuracy',
-       save_best_only=True,
-       mode='auto',
-       filepath=os.path.join(path, 'models', 'dnn_models', 'best', dnn_model.lower() + '_model.keras')  # Save as .h5
-      )
+        save_best_only=True,
+        save_weights_only=True,
+        mode='auto',
+        filepath=os.path.join(path, 'models', 'dnn_models', 'best', dnn_model.lower() + '_model.weights.h5')  # Save as .h5)
+        )
         reduceLR = ReduceLROnPlateau(monitor='val_categorical_accuracy', factor=0.1, patience=3, verbose=1)
         early_stopping = EarlyStopping(monitor='val_categorical_accuracy', patience=20, verbose=1)
 
@@ -307,7 +328,12 @@ def run_dl_analysis(train_tweets, test_tweets, y_train, y_test, path, shuffle=Tr
 
         # Load the best model
         model = utils.load_model(json_name=path + '/models/dnn_models/model_json/' + dnn_model.lower() + '_model.json',
-                                 h5_weights_name=path + '/models/dnn_models/best/' + dnn_model.lower() + '_model.keras')
+                                 h5_weights_name=path + '/models/dnn_models/best/' + dnn_model.lower() + '_model.weights.h5')
+        # Recompile the model after loading
+        model.compile(optimizer='adam',
+                      loss='categorical_crossentropy',
+                      metrics=['accuracy'])
+
 
         # Make prediction and evaluation
         predict(model, x_test, y_test)
@@ -318,14 +344,16 @@ def run_dl_analysis(train_tweets, test_tweets, y_train, y_test, path, shuffle=Tr
         print("==================================================================\n")
 
 
+
+
 if __name__ == "__main__":
     path = os.getcwd()[:os.getcwd().rfind('\\')]
-    to_write_filename = path + '/stats/dnn_models_analysis.txt'
+    to_write_filename = path + '/stats/dnn_models_analysis_CNN+LSTM.txt'
     utils.initialize_writer(to_write_filename)
 
     # Load the train and test sets for the selected dataset
-    dataset = "ghosh"
-    train_data, _, train_labels, test_data, _, test_labels = data_proc.get_dataset(dataset)
+    
+    train_data, _, train_labels, test_data, _, test_labels = data_proc.get_dataset()
 
     # Alternatively, if other experiments with the data are to be made (on Ghosh's dataset)
     # load different tokens (grammatical, strict, filtered, etc) and train on those
@@ -341,16 +369,21 @@ if __name__ == "__main__":
     """
 
     # Transform the output into categorical data
+    class_ratios = utils.get_classes_ratio_as_dict(train_labels)
+    print(class_ratios)
+
+    
     y_train = to_categorical(np.asarray(train_labels))
+    
     y_test = test_labels
 
     # Make and print the settings for the DL model
-    max_len = utils.get_max_len_info(train_data)
-    emb_types = ['keras', 'glove', 'random']
+    max_len = 50
+    emb_types = ['keras']
     trainable = True
     plot = True
     shuffle = False
-    epochs = 50
+    epochs = 20
     batch_size = 256
     embedding_dim = 300
     hidden_units = 256
@@ -364,7 +397,8 @@ if __name__ == "__main__":
             print("Data is in its normal order (NO shuffling).")
 
         # List of the models to be analysed
-        models = ['Standard', 'LSTM', 'Attention']
+        models = ['CNN + LSTM']
+        #'Standard', 'CNN','LSTM', 'GRU', 'Bidirectional LSTM', 'CNN + LSTM', 'Stateless Attention', 'Stateless Attention',
 
         # Run model
         run_dl_analysis(train_data, test_data, y_train, y_test, path, shuffle, max_len, emb_type,

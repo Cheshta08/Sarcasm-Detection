@@ -21,6 +21,7 @@ intensifiers = ["amazingly", "astoundingly", "awful", "bare", "bloody", "crazy",
 
 # Based on wikipedia
 contractions = {
+    "i'm": "i am",
     "ain't": "is not",
     "aren't": "are not",
     "can't": "cannot",
@@ -60,8 +61,8 @@ contractions = {
     "she'll": "she will",
     "she'd": "she would",
     "he'd": "he would",
-    "i'd": "I would",
-    "i'm": "I am",
+    "i'd": "i would",
+    "i'm": "i am",
     "shan't": "shall not",
     "sha'n't": "shall not",
     "shan't've": "shall not have",
@@ -73,9 +74,10 @@ contractions = {
     "there'd": "there would",   # or there had
     "there'd've": "there would have",
     "there's": "there is",
-    "to've": "to have",
+    "it's":"it is",
+    "she'll":"she will",
+    "you've":"you have",
     "wasn't": "was not",
-    "re": "are",
     "weren't": "were not",
     "what'll": " what will",
     "what'll've": "what will have",
@@ -108,10 +110,14 @@ contractions = {
     "y'all're": "you all are",
     "y'all've": "you all have",
     "c'mon": "come on",
+    "you've":"you have",
     "ma": "am going to"
 }
 
 slang = {
+    "nothin":"nothing",
+    "adv":"advertisement",
+    "dont": "do not",
     "4ward": "forward",
     "brb": "be right back",
     "b4": "before",
@@ -170,6 +176,7 @@ slang = {
     "lmao": "laugh my ass off",
     "lmaoo": "laugh my ass off",
     "omg":"oh my god",
+    "tb":"throwback",
     "oomg":"oh my god",
     "omgg":"oh my god",
     "omfg": "oh my fucking god",
@@ -202,6 +209,7 @@ slang = {
     "luv": "love",
     "imma": "i am",
     "&": "and",
+    "ill":"i will",
     "thanx": "thanks",
     "til": "until",
     "till": "until",
@@ -228,7 +236,9 @@ slang = {
     "xoxo": "love",
     "thats": "that is",
     "homie": "best friend",
-    "homies": "best friends"
+    "homies": "best friends",
+    "yea":"yeah",
+    "em":"them"
 }
 
 implicit_emoticons = {

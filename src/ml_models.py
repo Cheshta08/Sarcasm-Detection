@@ -6,6 +6,7 @@ import utils, classifiers
 import data_processing as data_proc
 
 
+
 # Settings for the up-coming ML model
 pragmatic = True
 lexical = True
@@ -27,36 +28,41 @@ def baseline(tweets_train, train_labels, tweets_test, test_labels):
     # Import the subjectivity lexicon
     subj_dict = data_proc.get_subj_lexicon()
 
-    types_of_features = ['1', '2', '3', 'ngrams']
+    types_of_features = ['1', '2', '3','ngrams']
     for t in types_of_features:
         start = time.time()
         utils.print_model_title("Classification using feature type " + t)
-        if t is '1':
+        if t == '1':
             x_train_features = extract_baseline_features.get_features1(tweets_train, subj_dict)
             x_test_features = extract_baseline_features.get_features1(tweets_test, subj_dict)
 
-        if t is '2':
+        if t == '2':
             x_train_features = extract_baseline_features.get_features2(tweets_train, subj_dict)
             x_test_features = extract_baseline_features.get_features2(tweets_test, subj_dict)
 
-        if t is '3':
+        if t =='3':
             x_train_features = extract_baseline_features.get_features3(tweets_train, subj_dict)
             x_test_features = extract_baseline_features.get_features3(tweets_test, subj_dict)
 
-        if t is 'ngrams':
+        if t == 'ngrams':
             ngram_map, x_train_features = extract_baseline_features.get_ngram_features(tweets_train, n=1)
             x_test_features = extract_baseline_features.get_ngram_features_from_map(tweets_test, ngram_map, n=1)
+
+        scaler = preprocessing.StandardScaler()
+        x_train_features = scaler.fit_transform(x_train_features)
+        x_test_features = scaler.transform(x_test_features)
+
 
         # Get the class ratio
         class_ratio = utils.get_classes_ratio_as_dict(train_labels)
 
         # Train on a Linear Support Vector Classifier
         print("\nEvaluating a linear SVM model...")
-        classifiers.linear_svm(x_train_features, train_labels, x_test_features, test_labels, class_ratio,max_iter=5000)
+        classifiers.linear_svm(x_train_features, train_labels, x_test_features, test_labels, class_ratio,max_iter=10000)
 
         # Train on a Logistic Regression Classifier
         print("\nEvaluating a logistic regression model...")
-        classifiers.logistic_regression(x_train_features, train_labels, x_test_features, test_labels, class_ratio,max_iter=5000)
+        classifiers.logistic_regression(x_train_features, train_labels, x_test_features, test_labels, class_ratio,max_iter=10000)
         end = time.time()
         print("Completion time of the baseline model with features type %s: %.3f s = %.3f min"
               % (t, (end - start), (end - start) / 60.0))
@@ -87,18 +93,28 @@ def ml_model(train_tokens, train_pos, y_train, test_tokens, test_pos, y_test):
     all_test_features = [test_pragmatic, test_lexical, test_pos, test_sent, test_topic, test_sim]
 
     # Choose your feature options: you can run on all possible combinations of features
-    sets_of_features = 6
-    feature_options = list(itertools.product([False, True], repeat=sets_of_features))
-    feature_options = feature_options[1:]     # skip over the option in which all entries are false
+    # sets_of_features = 6
+    # feature_options = list(itertools.product([False, True], repeat=sets_of_features))
+    # feature_options = feature_options[1:]     # skip over the option in which all entries are false
 
     # OR Can select just the features that you want
     # From left to right, set to true if you want the feature to be active:
     # [Pragmatic, Lexical-grams, POS-grams, Sentiment, LDA topics, Similarity]
     # feature_options = [[True, True, True, True, True, True]]
-
+    # feature_options = [
+    # [True, False, False, False, False, False],  # Only Pragmatic 
+    # [False, False, True, False, False, False],  # Only POS-grams
+    # [False, False, False, True, False, False],  # Only Sentiment
+    # [False, False, False, False, True, False],  # Only LDA topics
+    # [False, False, False, False, False, True],
+    # [True,False, True, True, True, True]  # Only Similarity
+    # ]
+    feature_options = [[False, False, False, True, False, False]]
+   
     for option in feature_options:
         train_features = [{} for _ in range(len(train_tokens))]
         test_features = [{} for _ in range(len(test_tokens))]
+
         utils.print_features(option, ['Pragmatic', 'Lexical-grams', 'POS-grams', 'Sentiment', 'LDA topics', 'Similarity'])
 
         # Make a feature selection based on the current feature_option choice
@@ -126,14 +142,13 @@ def ml_model(train_tokens, train_pos, y_train, test_tokens, test_pos, y_test):
 
 if __name__ == "__main__":
     path = os.getcwd()[:os.getcwd().rfind('\\')]
-    to_write_filename = path + '/stats/ml_analysis.txt'
+    to_write_filename = path + '/stats/ml_analysis_sentiment.txt'
     utils.initialize_writer(to_write_filename)
 
-    dataset = "ghosh"      # can be "ghosh", "riloff", "sarcasmdetection" and "ptacek"
-    train_tokens, train_pos, train_labels, test_tokens, test_pos, test_labels = data_proc.get_dataset(dataset)
+        
+    train_tokens, train_pos, train_labels, test_tokens, test_pos, test_labels = data_proc.get_dataset_1()
 
     run_baseline = False
-
     if run_baseline:
         baseline(train_tokens, train_labels, test_tokens, test_labels)
     else:
