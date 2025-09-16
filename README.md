@@ -56,3 +56,8 @@ The models were evaluated using the following metrics:
 ## Future Work
 - Experiment with more advanced deep learning models to further improve sarcasm detection accuracy.
 - Fine-tune feature extraction and scaling methods for better performance across diverse datasets.
+- The model focused primarily on mixed Hindi-English language, but can be extended to work on across other languages.
+- Model only categorises the input as 'Sarcastic' or 'Non-Sarcastic', so can be further extended to classify specific types of sarcasm
+
+  ## Contribution
+- Edit by Priyanshi Modi
